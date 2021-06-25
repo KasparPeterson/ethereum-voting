@@ -21,7 +21,9 @@ contract("PresidentElections Deployment", function (/* accounts */) {
     })
 });
 
-contract("PresidentElections Voting", function (/* accounts */) {
+contract("PresidentElections Voting", function (accounts) {
+    const DONALD = PresidentElections.Candidate.DONALD
+    const BIDEN = PresidentElections.Candidate.BIDEN
     let contract
 
     before(async function () {
@@ -29,6 +31,24 @@ contract("PresidentElections Voting", function (/* accounts */) {
     })
 
     it("voting increases the result", async function () {
-
+        const votes_original = await contract.getVotes(DONALD)
+        await contract.vote(DONALD, {from: accounts[0]})
+        const votes = await contract.getVotes(DONALD)
+        assert.equal(parseInt(votes), parseInt(votes_original) + 1)
     })
-}
+
+    it("voting does not change the other candidate result", async function () {
+        const votes_original = await contract.getVotes(BIDEN)
+        await contract.vote(DONALD, {from: accounts[0]})
+        const votes = await contract.getVotes(BIDEN)
+        assert.equal(parseInt(votes), parseInt(votes_original))
+    })
+
+    it("voting twice increases the result by 1", async function () {
+        const votes_original = await contract.getVotes(DONALD)
+        await contract.vote(DONALD, {from: accounts[1]})
+        await contract.vote(DONALD, {from: accounts[1]})
+        const votes = await contract.getVotes(DONALD)
+        assert.equal(parseInt(votes), parseInt(votes_original) + 1)
+    })
+});

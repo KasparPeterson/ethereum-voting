@@ -10,6 +10,7 @@ contract PresidentElections {
         BIDEN
     }
 
+    mapping(address => bool) hasVoted;
     mapping(address => Candidate) votes;
     mapping(uint => uint) voteResults;
 
@@ -22,6 +23,11 @@ contract PresidentElections {
         // * voting has an ending
         // * some governing mechanism so that one
         //   person cannot make infinite new addresses
+        if (!hasVoted[msg.sender]) {
+            hasVoted[msg.sender] = true;
+            votes[msg.sender] = candidate;
+            voteResults[uint(candidate)] = voteResults[uint(candidate)] + 1;
+        }
     }
 
     function getVotes(Candidate candidate) public view returns (uint) {
