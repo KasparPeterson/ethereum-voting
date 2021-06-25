@@ -51,4 +51,15 @@ contract("PresidentElections Voting", function (accounts) {
         const votes = await contract.getVotes(DONALD)
         assert.equal(parseInt(votes), parseInt(votes_original) + 1)
     })
+
+    it("voting second time for different candidate changes the vote", async function () {
+        const votes_original1 = await contract.getVotes(DONALD)
+        const votes_original2 = await contract.getVotes(BIDEN)
+        await contract.vote(DONALD, {from: accounts[2]})
+        await contract.vote(BIDEN, {from: accounts[2]})
+        const votes1 = await contract.getVotes(DONALD)
+        const votes2 = await contract.getVotes(BIDEN)
+        assert.equal(parseInt(votes1), parseInt(votes_original1))
+        assert.equal(parseInt(votes2), parseInt(votes_original2) + 1)
+    })
 });

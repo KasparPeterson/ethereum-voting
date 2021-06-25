@@ -18,14 +18,19 @@ contract PresidentElections {
     }
 
     function vote(Candidate candidate) public {
-        // * each address can vote one time
-        // * is able to change the vote
-        // * voting has an ending
-        // * some governing mechanism so that one
+        // 1. each address can vote one time
+        // 2. is able to change the vote
+        // 3. voting has an ending
+        // 4. some governing mechanism so that one
         //   person cannot make infinite new addresses
         if (!hasVoted[msg.sender]) {
             hasVoted[msg.sender] = true;
             votes[msg.sender] = candidate;
+            voteResults[uint(candidate)] = voteResults[uint(candidate)] + 1;
+        } else {
+            Candidate previousCandidate = votes[msg.sender];
+            votes[msg.sender] = candidate;
+            voteResults[uint(previousCandidate)] = voteResults[uint(previousCandidate)] - 1;
             voteResults[uint(candidate)] = voteResults[uint(candidate)] + 1;
         }
     }
