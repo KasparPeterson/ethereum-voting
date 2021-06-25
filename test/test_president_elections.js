@@ -1,3 +1,5 @@
+const truffleAssert = require('truffle-assertions');
+const timeHelper = require("./time_helper");
 const PresidentElections = artifacts.require("PresidentElections");
 
 contract("PresidentElections Deployment", function (/* accounts */) {
@@ -52,7 +54,7 @@ contract("PresidentElections Voting", function (accounts) {
         assert.equal(parseInt(votes), parseInt(votes_original) + 1)
     })
 
-    it("voting second time for different candidate changes the vote", async function () {
+    it("voting for different candidate changes the vote", async function () {
         const votes_original1 = await contract.getVotes(DONALD)
         const votes_original2 = await contract.getVotes(BIDEN)
         await contract.vote(DONALD, {from: accounts[2]})
@@ -61,5 +63,19 @@ contract("PresidentElections Voting", function (accounts) {
         const votes2 = await contract.getVotes(BIDEN)
         assert.equal(parseInt(votes1), parseInt(votes_original1))
         assert.equal(parseInt(votes2), parseInt(votes_original2) + 1)
+    })
+
+    it("voting fails after voting is over", async function () {
+        // TODO: 1. These 2 tests should be ideally separate
+        // TODO: 2. This -2 seconds is flaky, should work with -1 instead?
+        // Just two seconds before the voting is over it must still succeed
+        await timeHelper.advanceTimeAndBlock(3600 * 24 - 2)
+        await contract.vote(DONALD, {from: accounts[3]})
+
+        // After advancing time another second it must fail
+        await timeHelper.advanceTimeAndBlock(2)
+        await truffleAssert.reverts(
+            contract.vote(DONALD, {from: accounts[3]}),
+            "Voting is over");
     })
 });
