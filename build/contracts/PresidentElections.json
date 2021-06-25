@@ -1,0 +1,223 @@
+{
+  "contractName": "PresidentElections",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/kaspar/Code/ethereum-voting/contracts/PresidentElections.sol\":\"PresidentElections\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/kaspar/Code/ethereum-voting/contracts/PresidentElections.sol\":{\"keccak256\":\"0x4ecc3bb8a5a1877cf265acb2542cc2a9333ad12c627b7e4659a27b21234abc7f\",\"urls\":[\"bzz-raw://eb3d89f524ee681d1436a9e42244c766e54ec91aab5cb72ce15cd697508b36ed\",\"dweb:/ipfs/QmZonts6Mz8e85sCu5Ss722Tb1E4GDQspeG8Z94ScM1e9E\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a72315820626f6753f77915681ac74f3322654053e3cf2f1cac6ba53bb83f04196938db1f64736f6c63430005100032",
+  "deployedBytecode": "0x6080604052600080fdfea265627a7a72315820626f6753f77915681ac74f3322654053e3cf2f1cac6ba53bb83f04196938db1f64736f6c63430005100032",
+  "sourceMap": "66:60:1:-;;;98:26;8:9:-1;5:2;;;30:1;27;20:12;5:2;98:26:1;66:60;;;;;;",
+  "deployedSourceMap": "66:60:1:-;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\n\ncontract PresidentElections {\n  constructor() public {\n  }\n}\n",
+  "sourcePath": "/Users/kaspar/Code/ethereum-voting/contracts/PresidentElections.sol",
+  "ast": {
+    "absolutePath": "/Users/kaspar/Code/ethereum-voting/contracts/PresidentElections.sol",
+    "exportedSymbols": {
+      "PresidentElections": [
+        39
+      ]
+    },
+    "id": 40,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 34,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:32:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 39,
+        "linearizedBaseContracts": [
+          39
+        ],
+        "name": "PresidentElections",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 37,
+              "nodeType": "Block",
+              "src": "119:5:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 38,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 35,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "109:2:1"
+            },
+            "returnParameters": {
+              "id": 36,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "119:0:1"
+            },
+            "scope": 39,
+            "src": "98:26:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 40,
+        "src": "66:60:1"
+      }
+    ],
+    "src": "32:95:1"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/Users/kaspar/Code/ethereum-voting/contracts/PresidentElections.sol",
+      "exportedSymbols": {
+        "PresidentElections": [
+          39
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".22",
+            "<",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 34,
+        "name": "PragmaDirective",
+        "src": "32:32:1"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            39
+          ],
+          "name": "PresidentElections",
+          "scope": 40
+        },
+        "children": [
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 39,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 35,
+                "name": "ParameterList",
+                "src": "109:2:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 36,
+                "name": "ParameterList",
+                "src": "119:0:1"
+              },
+              {
+                "attributes": {
+                  "statements": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 37,
+                "name": "Block",
+                "src": "119:5:1"
+              }
+            ],
+            "id": 38,
+            "name": "FunctionDefinition",
+            "src": "98:26:1"
+          }
+        ],
+        "id": 39,
+        "name": "ContractDefinition",
+        "src": "66:60:1"
+      }
+    ],
+    "id": 40,
+    "name": "SourceUnit",
+    "src": "32:95:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x66Caa3797DEeC298dE51A580D15C44280AE72DBf",
+      "transactionHash": "0x7cefe95b44ec13cfb9e7c166cdbf220cdd331e80c40d66cd92a41db0a763a580"
+    }
+  },
+  "schemaVersion": "3.4.1",
+  "updatedAt": "2021-06-25T09:03:00.117Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

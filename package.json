@@ -1,0 +1,14 @@
+{
+  "name": "ethereum-voting",
+  "version": "1.0.0",
+  "description": "ethereum voting project for learning purposes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kaspar Peterson",
+  "license": "MIT",
+  "devDependencies": {
+    "truffle": "^5.3.12"
+  }
+}
